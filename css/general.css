@@ -1,0 +1,204 @@
+body {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #31313a;
+}
+/* button for download */
+
+.button, .button:visited {
+    background-color: #a8b400;
+    border-radius: 100px;
+    color: #ffffff;
+    margin: 4% 20%;
+    text-transform: uppercase;
+    padding: 2.5% 10%;
+    font-size: 18px;
+    letter-spacing: .5px;
+    float: none;
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -o-animation-delay: .2s;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.button a:visited {text-decoration: none;}
+.button:hover,
+.card-information .button {
+    background-color: #8eaa0d;
+    text-decoration: none;
+    color: #ffffff;
+}
+.button:active a {
+    color: #e1e977;
+    text-decoration: none;}
+
+/* Block mobile stuff */
+
+.onlymobile {
+    display: none;
+}
+/* ------ HEADER ------ */
+
+.navbar {
+    background: #ffffff;
+    box-shadow: 0px 2px 2px #cccccc;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+.navbar .google-play {
+    border-radius: 6px;
+    width: 14%;
+    padding: 0;
+    margin: 1.3% 0;
+    float: right;
+}
+
+a.brand {
+    float: left;
+    margin: 1% 0;
+    width: 5%;
+}
+
+.section-three .google-play {
+    background: #31313a;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.google-play img,
+a.brand img {
+    width: 100%;
+}
+/* ------ /HEADER ------ */
+/* ------ FOOTER ------ */
+
+.footer {
+    background-color: #e7e7e7;
+    color: #394240;
+    font-size: 14px;
+    padding: 1% 0;
+    font-weight: 300;
+}
+
+.footer a {
+    color: #394240;
+}
+
+.signature {
+    text-align: left;
+}
+
+.legals {
+    text-align: right;
+}
+ .swiper-container {
+        text-align: center;
+        width: 100%;
+        height: auto;
+    }
+
+/* ------ /FOOTER------ */
+/* Media Queries*/
+
+@media (max-width: 990px) {
+    .navbar .google-play {
+        width: 18%;
+    }
+    a.brand {width: 6%;}
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .onlymobile {
+        display: block;
+    }
+    .onlydesktop {
+        display: none;
+    }
+    .button {
+        width: 120%;
+        margin: 0 auto;
+        background-color: #a8b400;
+        border: 4px solid #ffffff;
+        background-size: 7%;
+        font-size: 18px;
+        padding: 6% 0;
+        z-index: 1;
+    }
+    .button:hover {
+        background-color: #ff7900;
+        border: 1px solid #ff7900;
+    }
+    /* ------ HEADER ------ */
+
+    .navbar .google-play {
+        width: 22%;
+    }
+    a.brand {
+        width: 8%;
+    }
+    /* ------ /HEADER ------ */
+    /* ------ FOOTER ------ */
+
+    .footer {
+        padding-bottom: 0;
+    }
+    .footer .container {
+        width: 100%;
+        padding: 0;
+    }
+    .footer .signature {
+        background: #f2f2f2;
+        float: none;
+        padding: 1% 2%;
+    }
+    .footer .legals {
+        background: #fafafa;
+        float: none;
+        text-align: left;
+        padding: 1% 2%;
+    }
+    /* ------ /FOOTER ------ */
+}
+
+@media (max-width: 460px) {
+    .container {
+        width: 100%;
+    }
+    .button,
+    .title p,
+    .section-two ul li p {
+        font-size: 14px;
+    }
+    /* ------ HEADER ------ */
+
+    a.brand {
+        width: 15%;
+    }
+    .navbar .google-play {
+        width: 40%;
+        padding: 2% 4%;
+        margin: 2% 0;
+    }
+    /* ------ /HEADER ------ */
+    /* ------ FOOTER ------ */
+
+    .footer {
+        font-size: 12px;
+    }
+    /* ------ /FOOTER ------ */
+}
+
+
+   
+
