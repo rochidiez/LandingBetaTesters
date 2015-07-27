@@ -111,13 +111,13 @@
                 <div class="container">
                     <h1>Recibe una invitación para probar la nueva app de OLX</h1>
                     <p>Sé parte del exclusivo grupo de usuarios fundadores de la app de OLX Honduras. Déjanos tu mail y recibe antes que todos una invitación para bajarte la aplicación móvil totalmente gratis que revolucionará las compras y ventas online. </p>
-                    <form name='form' method='post' action='contactscript.php'>  
+                    <form id="callus">
                         <div class="form">
                             <p class="label">tu email:</p>
-                            <input class="input" type="email" placeholder="Escribe tu email" name="email"  required />
+                            <input class="input" type="email" placeholder="Escribe tu email" id="email" name="email" required />
                             <p class="txt-min">Sólo utilizaremos tu mail para enviarte la invitación</p>
                             <div class="btn-get-invite wow animated bounceIn">
-                                <input type="submit" value="Obtener invitación" />
+                                <input id="send" type="submit" value="Obtener invitación" />
                             </div>
                             <p class="info">Acuérdate que bajándote el app aumentarás y fortalecerás la red de compra-venta de artículos online más segura de Honduras! ;)</p>
                         </div>
@@ -160,6 +160,32 @@
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
     });
+    </script>
+    <script type="text/javascript">
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function postContactToGoogle(e) {
+        console.log(e);
+        e.preventDefault();
+
+        if (validateEmail($('#email').val())) {
+            var data = {
+                name: $('#name').val(),
+                lastname: $('#lastname').val(),
+                email: $('#email').val(),
+                time: new Date()
+            };
+            console.log(data);
+            $.post("https://script.google.com/macros/s/AKfycby2j48NLI1uNrw4xSVmDqzcIzj5jTIAmq40azJwVeUhMdnBeQI/exec", data);
+        } else {
+            alert("error : Mail invalido");
+        }
+    }
+    $('#send').on('click', postContactToGoogle);
+    
     </script>
 </body>
 
