@@ -27,7 +27,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <header class="navbar" role="navigation">
         <div class="container page-scroll">
-            <a class="brand animated fadeInLeft" href="home.html"><img src="img/olx-brand.png" alt="OLX" /></a>
+            <a class="brand animated fadeInLeft" href="#"><img src="img/olx-brand.png" alt="OLX" /></a>
             <div class="google-play animated fadeInRight"><img src="img/googleplay(soon).png" alt="Google Play Badge" /></div>
         </div>
     </header>
@@ -131,9 +131,9 @@
             <div class="col-sm-6 col-xs-12 signature">With <i class="glyphicon glyphicon-heart"></i> from ©OLX
             </div>
             <div class="col-sm-6 col-xs-12 legals">
-                <a href="rules.html">Terms and Condition</a> -
-                <a href="faqs.html">Faq’s</a> -
-                <a href="safety.html">Safety Tips</a>
+                <a href="rules.html">Términos y condiciones</a> -
+                <a href="faqs.html">Preguntas frecuentes</a> -
+                <a href="safety.html">Tips de seguridad</a>
             </div>
         </div>
     </footer>
@@ -180,12 +180,13 @@
             };
             console.log(data);
             $.post("https://script.google.com/macros/s/AKfycby2j48NLI1uNrw4xSVmDqzcIzj5jTIAmq40azJwVeUhMdnBeQI/exec", data);
+            var url = "ok.html#invite";    
+            $(location).attr('href',url);
         } else {
             alert("error : Mail invalido");
         }
     }
     $('#send').on('click', postContactToGoogle);
-    
     </script>
 </body>
 
