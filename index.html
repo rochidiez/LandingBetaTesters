@@ -166,22 +166,31 @@
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
-
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
     function postContactToGoogle(e) {
-        console.log(e);
+
         e.preventDefault();
 
         if (validateEmail($('#email').val())) {
             var data = {
-                name: $('#name').val(),
-                lastname: $('#lastname').val(),
+                //name: $('#name').val(),
+                //lastname: $('#lastname').val(),
                 email: $('#email').val(),
-                time: new Date()
+                time: new Date(),
+                referrer: getParameterByName('ref'),
+                user_agent: navigator.userAgent
             };
-            console.log(data);
-            $.post("https://script.google.com/macros/s/AKfycby2j48NLI1uNrw4xSVmDqzcIzj5jTIAmq40azJwVeUhMdnBeQI/exec", data);
-            var url = "ok.html#invite";    
-            $(location).attr('href',url);
+            $.post("https://script.google.com/macros/s/AKfycby2j48NLI1uNrw4xSVmDqzcIzj5jTIAmq40azJwVeUhMdnBeQI/exec", data)
+                .always(function(){
+                    var url = "ok.html#invite";
+                    $(location).attr('href',url);
+                });
+
         } else {
             alert("error : Mail invalido");
         }
